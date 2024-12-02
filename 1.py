@@ -2,11 +2,8 @@ from aocd.models import Puzzle
 
 puzzle = Puzzle(year=2024, day=1)
 
-
 lines = puzzle.input_data.split("\n")
 
-
-# separate the lists
 list1 = list()
 list2 = list()
 for line in lines:
@@ -19,7 +16,6 @@ solution_a = 0
 
 current1 = list1.copy()
 current2 = list2.copy()
-# calculate the solution
 while len(current1) > 0:
     number1 = min(current1)
     number2 = min(current2)
@@ -33,7 +29,6 @@ while len(current1) > 0:
 puzzle.answer_a = solution_a
 
 solution_b = 0
-
 for number in list1:
     solution_b += number * list2.count(number)
 
